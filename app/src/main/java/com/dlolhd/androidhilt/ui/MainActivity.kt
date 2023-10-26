@@ -1,7 +1,8 @@
-package com.dlolhd.androidhilt
+package com.dlolhd.androidhilt.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dlolhd.androidhilt.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

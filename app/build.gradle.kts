@@ -1,18 +1,19 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp") version "1.8.21-1.0.11"
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace = "com.dlolhd.androidhilt"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.dlolhd.androidhilt"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +38,8 @@ android {
     }
 }
 
+val hiltVersion = "2.45"
+val roomVersion = "2.6.0"
 dependencies {
 
     implementation("androidx.core:core-ktx:1.9.0")
@@ -48,8 +51,14 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
+    implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
+
+    // Room
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    // To use Kotlin Symbol Processing (KSP)
+    //ksp("androidx.room:room-compiler:$roomVersion")
 
 }
 
