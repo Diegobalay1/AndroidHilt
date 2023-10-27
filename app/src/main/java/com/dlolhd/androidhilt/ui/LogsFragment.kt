@@ -15,14 +15,17 @@ import com.dlolhd.androidhilt.R
 import com.dlolhd.androidhilt.data.Log
 import com.dlolhd.androidhilt.data.LoggerLocalDataSource
 import com.dlolhd.androidhilt.util.DateFormatter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  * Fragment that displays the database logs.
  */
+@AndroidEntryPoint
 class LogsFragment : Fragment() {
 
-    private lateinit var logger: LoggerLocalDataSource
-    private lateinit var dateFormatter: DateFormatter
+    @Inject lateinit var logger: LoggerLocalDataSource
+    @Inject lateinit var dateFormatter: DateFormatter
 
     private lateinit var recyclerView: RecyclerView
 
@@ -40,7 +43,7 @@ class LogsFragment : Fragment() {
         }
     }
 
-    override fun onAttach(context: Context) {
+    /*override fun onAttach(context: Context) {
         super.onAttach(context)
 
         populateFields(context)
@@ -52,7 +55,7 @@ class LogsFragment : Fragment() {
         dateFormatter =
             (context.applicationContext as AndroidHiltApplication)
                 .appContainer.provideDateFormatter()
-    }
+    }*/
 
     override fun onResume() {
         super.onResume()

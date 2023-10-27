@@ -4,8 +4,11 @@ import android.os.Looper
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import android.os.Handler
+import javax.inject.Inject
 
-class LoggerLocalDataSource(private val logDao: LogDao) {
+class LoggerLocalDataSource @Inject constructor(
+    private val logDao: LogDao
+) {
     private val executorService: ExecutorService = Executors.newFixedThreadPool(4)
     private val mainThreadHandler by lazy {
         Handler(Looper.getMainLooper())
