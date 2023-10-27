@@ -2,6 +2,7 @@ package com.dlolhd.androidhilt.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import com.dlolhd.androidhilt.AndroidHiltApplication
 import com.dlolhd.androidhilt.R
 import com.dlolhd.androidhilt.navigator.AppNavigator
@@ -29,4 +30,5 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
     }
+
 }
