@@ -12,6 +12,7 @@ import com.dlolhd.androidhilt.util.DateFormatter
 interface AppContainer {
     fun provideNavigator(activity: FragmentActivity) : AppNavigator
     val loggerDataSource : LoggerLocalDataSource
+    fun provideDateFormatter() : DateFormatter
 }
 
 class DefaultAppContainer(applicationContext: Context): AppContainer {
@@ -26,7 +27,7 @@ class DefaultAppContainer(applicationContext: Context): AppContainer {
         LoggerLocalDataSource(logsDatabase.logDao())
     }
 
-    fun provideDateFormatter() = DateFormatter()
+    override fun provideDateFormatter() = DateFormatter()
 
     override fun provideNavigator(activity: FragmentActivity): AppNavigator {
         return AppNavigatorImpl(activity)
