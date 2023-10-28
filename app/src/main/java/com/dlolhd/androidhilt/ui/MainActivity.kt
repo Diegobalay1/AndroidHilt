@@ -7,7 +7,9 @@ import com.dlolhd.androidhilt.AndroidHiltApplication
 import com.dlolhd.androidhilt.R
 import com.dlolhd.androidhilt.navigator.AppNavigator
 import com.dlolhd.androidhilt.navigator.Screens
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navigator: AppNavigator
