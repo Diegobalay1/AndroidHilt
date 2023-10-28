@@ -9,7 +9,7 @@ import com.dlolhd.androidhilt.navigator.AppNavigator
 import com.dlolhd.androidhilt.navigator.AppNavigatorImpl
 import com.dlolhd.androidhilt.util.DateFormatter
 
-interface AppContainer {
+/*interface AppContainer {
     fun provideNavigator(activity: FragmentActivity) : AppNavigator
     val loggerDataSource : LoggerLocalDataSource
     fun provideDateFormatter() : DateFormatter
@@ -33,4 +33,4 @@ class DefaultAppContainer(applicationContext: Context): AppContainer {
         return AppNavigatorImpl(activity)
     }
 
-}
+}*/

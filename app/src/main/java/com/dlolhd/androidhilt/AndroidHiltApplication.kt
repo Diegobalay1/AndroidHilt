@@ -4,7 +4,7 @@ import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class AndroidHiltApplication : Application() {
+class AndroidHiltApplication : Application() /*{
 
     lateinit var appContainer: AppContainer
 
@@ -13,4 +13,4 @@ class AndroidHiltApplication : Application() {
         appContainer = DefaultAppContainer(applicationContext)
     }
 
-}
+}*/

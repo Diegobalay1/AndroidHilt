@@ -4,8 +4,9 @@ import androidx.fragment.app.FragmentActivity
 import com.dlolhd.androidhilt.R
 import com.dlolhd.androidhilt.ui.ButtonsFragment
 import com.dlolhd.androidhilt.ui.LogsFragment
+import javax.inject.Inject
 
-class AppNavigatorImpl(
+class AppNavigatorImpl @Inject constructor(
     private val activity: FragmentActivity
 ) : AppNavigator {
     override fun navigateTo(screen: Screens) {
