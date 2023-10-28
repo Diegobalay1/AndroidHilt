@@ -5,7 +5,9 @@ import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import android.os.Handler
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class LoggerLocalDataSource @Inject constructor(
     private val logDao: LogDao
 ) {
