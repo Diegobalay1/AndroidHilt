@@ -7,16 +7,16 @@ import android.os.Handler
 import javax.inject.Inject
 import javax.inject.Singleton
 
-@Singleton
+//@Singleton
 class LoggerLocalDataSource @Inject constructor(
     private val logDao: LogDao
-) {
+) : LoggerDataSource {
     private val executorService: ExecutorService = Executors.newFixedThreadPool(4)
     private val mainThreadHandler by lazy {
         Handler(Looper.getMainLooper())
     }
 
-    fun addLog(title: String, msg: String) {
+    override fun addLog(title: String, msg: String) {
         executorService.execute {
             logDao.insertAll(
                 Log(
@@ -28,14 +28,14 @@ class LoggerLocalDataSource @Inject constructor(
         }
     }
 
-    fun getAllLogs(callback: (List<Log>) -> Unit) {
+    override fun getAllLogs(callback: (List<Log>) -> Unit) {
         executorService.execute {
             val logs = logDao.getAll()
             mainThreadHandler.post { callback(logs) }
         }
     }
 
-    fun removeLogs() {
+    override fun removeLogs() {
         executorService.execute {
             logDao.nukeTable()
         }

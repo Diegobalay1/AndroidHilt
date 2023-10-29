@@ -2,6 +2,7 @@ package com.dlolhd.androidhilt.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
 import com.dlolhd.androidhilt.AndroidHiltApplication
 import com.dlolhd.androidhilt.R
@@ -19,12 +20,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //navigator = (applicationContext as AndroidHiltApplication).appContainer.provideNavigator(this)
 
         if (savedInstanceState == null) {
             navigator.navigateTo(Screens.BUTTONS)
         }
+
     }
 
     override fun onBackPressed() {

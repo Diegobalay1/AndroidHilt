@@ -9,7 +9,9 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.dlolhd.androidhilt.AndroidHiltApplication
 import com.dlolhd.androidhilt.R
+import com.dlolhd.androidhilt.data.LoggerDataSource
 import com.dlolhd.androidhilt.data.LoggerLocalDataSource
+import com.dlolhd.androidhilt.di.InMemoryLogger
 import com.dlolhd.androidhilt.navigator.AppNavigator
 import com.dlolhd.androidhilt.navigator.Screens
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +25,8 @@ class ButtonsFragment : Fragment() {
 
     /*private lateinit var logger: LoggerLocalDataSource
     private lateinit var navigator: AppNavigator*/
-    @Inject lateinit var logger: LoggerLocalDataSource
+    @InMemoryLogger
+    @Inject lateinit var logger: LoggerDataSource
     @Inject lateinit var navigator: AppNavigator
 
     override fun onCreateView(
