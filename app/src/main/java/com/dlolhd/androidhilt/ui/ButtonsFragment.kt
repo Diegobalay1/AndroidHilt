@@ -39,13 +39,13 @@ class ButtonsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.findViewById<Button>(R.id.button1).setOnClickListener {
-            logger.addLog("Logger 1", "Interaction with 'Button 1")
+            logger.addLog("Logger 1", "Interaction with 'Button 1'")
         }
         view.findViewById<Button>(R.id.button2).setOnClickListener {
-            logger.addLog("Logger 2", "Interaction with 'Button 2")
+            logger.addLog("Logger 2", "Interaction with 'Button 2'")
         }
         view.findViewById<Button>(R.id.button3).setOnClickListener {
-            logger.addLog("Logger 3", "Interaction with 'Button 3")
+            logger.addLog("Logger 3", "Interaction with 'Button 3'")
         }
         view.findViewById<Button>(R.id.all_logs).setOnClickListener {
             navigator.navigateTo(Screens.LOGS)

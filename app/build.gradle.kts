@@ -20,7 +20,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.dlolhd.androidhilt.CustomTestRunner"
     }
 
     buildTypes {
@@ -67,6 +68,11 @@ dependencies {
     kapt("androidx.room:room-compiler:$roomVersion")
     // To use Kotlin Symbol Processing (KSP)
     //ksp("androidx.room:room-compiler:$roomVersion")
+
+    // Hilt testing dependency
+    androidTestImplementation("com.google.dagger:hilt-android-testing:$hiltVersion")
+    // Make Hilt generate code in the androidTest folder
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:$hiltVersion")
 
 }
 
